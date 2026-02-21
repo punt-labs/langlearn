@@ -14,6 +14,13 @@ Port the full functionality of the legacy app in `~/Coding/langlearn-anki` into 
 - Templates: HTML/CSS card templates per language and card type.
 - Anki export: `AnkiBackend` + managers (media/deck) and note type mappings.
 
+## Progress (as of 2026-02-21)
+- `langlearn-types` has core request/result contracts, provider protocols, EvaluationResult, and PromptBundle.
+- `langlearn-anki` exports basic Front/Back decks and ships the template library (not yet wired to template-based deck building).
+- `langlearn-imagegen` ships OpenAI and Pexels providers with optional evaluator hooks.
+- `langlearn-tts` provides a stable CLI/MCP surface for ElevenLabs, OpenAI, and Polly.
+- Orchestrator pipeline and legacy CLI wiring are still pending.
+
 ## Feature Matrix (Legacy → Target)
 
 | Feature | Legacy Source | Target Repo(s) | Notes |
@@ -38,7 +45,7 @@ Port the full functionality of the legacy app in `~/Coding/langlearn-anki` into 
 | Logging & diagnostics | `logs/*.log`, CLI printouts | `langlearn` | Keep basic observability.
 
 ## Open Questions
-- Template ownership: keep templates in `langlearn-anki` (Anki-specific) or in `langlearn` (language-owned)?
+- Template ownership: templates currently live in `langlearn-anki`, with the orchestrator supplying fields only.
 - Data assets location: keep in `langlearn` or create a dedicated `langlearn-data` repo?
 - Evaluation provider: Anthropic vs OpenAI for image evaluation gates.
 - Stable diffusion: legacy mentions it, but we will **not** port it unless scope changes.
