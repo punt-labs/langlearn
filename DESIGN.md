@@ -1,11 +1,13 @@
 # Design Decision Log
 
 ## 0001 — Initial split into tri-modal packages (SETTLED)
+
 - Orchestrator owns evaluation gates for prompts, images, audio, and cards.
 - Backends are optional, one-way integrations via langlearn-types protocols.
 - All outputs are evaluated before proceeding to the next workflow step.
 
 ## 0002 — Multi-repo tri-modal architecture plan (SETTLED)
+
 - Scope: multi-repo layout with `langlearn`, `langlearn-types`, `langlearn-imagegen`, `langlearn-anki`, and `langlearn-tts` as sibling directories.
 - `langlearn-types` holds shared contracts only (protocols + dataclasses) and has no runtime dependencies.
 - `langlearn-imagegen` is a dumb executor: accepts prompt + optional evaluator and returns `ImageResult`; no prompt logic and no evaluation logic inside the package.
@@ -23,5 +25,6 @@
 - Phase 5: add test tiers, docs, and CI alignment across all repos.
 
 ## 0003 — Templates live with the Anki backend (SETTLED)
+
 - HTML/CSS templates are owned and shipped by `langlearn-anki`.
 - The orchestrator supplies fields and media references only.

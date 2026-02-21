@@ -3,14 +3,17 @@
 Orchestrator for LangLearn workflows (evaluation gates + backends).
 
 ## Status (2026-02-21)
+
 - CLI and MCP surfaces are scaffolding only (version, doctor, serve).
 - Language registry and language scaffolding exist, but pipelines are not wired end-to-end.
 - Orchestration flow, prompt engine, and media enrichment are still being ported.
 
 ## Roadmap
+
 See ROADMAP.md.
 
 ## Migration
+
 See MIGRATION.md for the legacy port plan and feature mapping.
 
 ## Install
