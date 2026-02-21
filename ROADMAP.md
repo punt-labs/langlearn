@@ -6,7 +6,7 @@ Last updated: 2026-02-21
 - Orchestrator scaffolding is in place (CLI/MCP stubs and language registry).
 - End-to-end orchestration is not wired yet.
 
-## In progress
+## Recently completed
 - langlearn-goc — Refresh documentation and roadmap.
 
 ## Next

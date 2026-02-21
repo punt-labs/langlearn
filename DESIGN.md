@@ -6,7 +6,7 @@
 - All outputs are evaluated before proceeding to the next workflow step.
 
 ## 0002 — Multi-repo tri-modal architecture plan (SETTLED)
-- Scope: multi-repo layout under `/Users/jfreeman/Coding/punt-labs` with `langlearn`, `langlearn-types`, `langlearn-imagegen`, `langlearn-anki`, and `langlearn-tts`.
+- Scope: multi-repo layout with `langlearn`, `langlearn-types`, `langlearn-imagegen`, `langlearn-anki`, and `langlearn-tts` as sibling directories.
 - `langlearn-types` holds shared contracts only (protocols + dataclasses) and has no runtime dependencies.
 - `langlearn-imagegen` is a dumb executor: accepts prompt + optional evaluator and returns `ImageResult`; no prompt logic and no evaluation logic inside the package.
 - `langlearn-anki` performs card generation and export only; it consumes provided media assets and never generates media.
