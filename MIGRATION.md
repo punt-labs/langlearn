@@ -29,7 +29,7 @@ Port the full functionality of the legacy app in `~/Coding/langlearn-anki` into 
 | Media generation orchestration | `MediaService`, `MediaManager`, `MediaEnricher` | `langlearn` | Should call `langlearn-tts` + `langlearn-imagegen` with policies.
 | Audio generation (AWS Polly) | `infrastructure/services/audio_service.py` | `langlearn-tts` | Voices per language: German Marlene, Russian Tatyana, Korean Seoyeon.
 | Image search (Pexels) | `infrastructure/services/image_service.py` | `langlearn-imagegen` | Should support cultural context keywords.
-| AI image gen (OpenAI GPT Image) | `gpt_image_service.py` | `langlearn-imagegen` | Support size/quality + metadata.
+| AI image gen (OpenAI GPT Image) | `gpt_image_service.py` | `langlearn-imagegen` | Support size/quality + metadata; align with legacy `--image-api gpt-image` + `two-stage-gpt-image`.
 | Two-stage AI image generation | `TwoStageDALLEService`, `best_of_image_search` | `langlearn` + `langlearn-imagegen` | Needs evaluation gates + fallback logic.
 | Image evaluation scoring | `AIImageEvaluator` | `langlearn` | 0.0–1.0 scoring with threshold.
 | Prompt template engine | `prompt_template_engine.py`, `prompts/` | `langlearn` | Centralized Jinja templates, cultural styles.
@@ -41,6 +41,7 @@ Port the full functionality of the legacy app in `~/Coding/langlearn-anki` into 
 - Template ownership: keep templates in `langlearn-anki` (Anki-specific) or in `langlearn` (language-owned)?
 - Data assets location: keep in `langlearn` or create a dedicated `langlearn-data` repo?
 - Evaluation provider: Anthropic vs OpenAI for image evaluation gates.
+- Stable diffusion: legacy mentions it, but we will **not** port it unless scope changes.
 
 ## Implementation Sequence (High-Level)
 1. Port core contracts and language/record schemas (`langlearn-types`, `langlearn`).
