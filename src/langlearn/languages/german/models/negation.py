@@ -317,44 +317,6 @@ class Negation(LanguageDomainModel, MediaGenerationCapable):
         """
         return self.word
 
-    def _get_fallback_search_terms(self) -> str:
-        """Get fallback search terms using negation concept mappings."""
-
-        # Negation words are abstract concepts, so use enhanced search terms
-        # Check for exact matches first, then partial matches (longer first)
-        concept_mappings = [
-            ("nobody", "empty person silhouette nobody"),
-            ("nothing", "empty void blank nothing"),
-            ("nowhere", "empty space void location"),
-            ("neither", "choice rejection either"),
-            ("never", "infinity crossed out never"),
-            (
-                "no/not a",
-                "crossed out circle prohibition stop sign",
-            ),  # Better search terms
-            ("not", "prohibition stop sign red x"),
-            ("no", "negative denial no symbol"),
-        ]
-
-        english_lower = self.english.lower()
-        for key, enhanced_terms in concept_mappings:
-            if key in english_lower:
-                return enhanced_terms
-
-        # For different negation types, add context
-        type_mappings = {
-            NegationType.GENERAL: f"{self.english} prohibition stop sign",
-            NegationType.ARTICLE: f"{self.english} denial rejection symbol",
-            NegationType.PRONOUN: f"{self.english} empty void absence",
-            NegationType.TEMPORAL: f"{self.english} time crossed out never",
-            NegationType.SPATIAL: f"{self.english} location empty void",
-            NegationType.CORRELATIVE: f"{self.english} choice rejection neither",
-            NegationType.INTENSIFIER: f"{self.english} emphasis prohibition strong",
-        }
-        return type_mappings.get(
-            self.type, f"{self.english} negation prohibition symbol"
-        )
-
     def _build_search_context(self) -> str:
         """Build rich context for image search using German negation expertise.
 

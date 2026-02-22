@@ -216,11 +216,7 @@ class Verb(LanguageDomainModel, MediaGenerationCapable):
 
         # Check if this is an imperative (indicated by placeholder values)
         is_imperative = (
-            self.present_ich == "[imperative]"
-            or self.perfect == "[imperative]"
-            or (
-                self.present_ich == "[imperative]" and self.present_er == "[imperative]"
-            )
+            self.present_ich == "[imperative]" or self.perfect == "[imperative]"
         )
 
         if is_imperative:
@@ -449,8 +445,9 @@ class Verb(LanguageDomainModel, MediaGenerationCapable):
             ),
         ]
 
+        english_words = set(english_lower.split())
         for verb_type, strategy in verb_strategies:
-            if any(verb in english_lower for verb in verb_type):
+            if english_words & verb_type:
                 return strategy
 
         # Default action-focused strategy

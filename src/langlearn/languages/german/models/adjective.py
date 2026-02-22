@@ -161,6 +161,9 @@ class Adjective(LanguageDomainModel, MediaGenerationCapable):
         Returns:
             bool: True if the comparative form is valid
         """
+        if not self.comparative:
+            return True  # Optional field
+
         # Most German comparatives add -er to the base form
         # Some have umlaut changes (e.g., alt -> älter)
         # A few are irregular (e.g., gut -> besser)
@@ -375,8 +378,8 @@ class Adjective(LanguageDomainModel, MediaGenerationCapable):
             "blunt",
         }
 
-        english_lower = self.english.lower().strip()
-        is_concrete = any(concrete in english_lower for concrete in concrete_adjectives)
+        english_words = set(self.english.lower().strip().split())
+        is_concrete = bool(english_words & concrete_adjectives)
 
         if is_concrete:
             visual_strategy = (
