@@ -22,7 +22,10 @@ class LanguageRegistry:
 
     @classmethod
     def get(cls, language_code: str) -> Language:
-        """Get a language implementation by code (instantiated via no-arg constructor)."""
+        """Get a language implementation by code.
+
+        Instantiates the registered class via its no-arg constructor.
+        """
         if language_code not in cls._languages:
             raise ValueError(f"Language {language_code} not registered")
         return cls._languages[language_code]()
