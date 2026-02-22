@@ -54,8 +54,6 @@ def test_korean_noun_particles_generated() -> None:
 
 
 def test_russian_noun_defaults() -> None:
-    record = RussianNounRecord.from_csv_fields(
-        ["dom", "house", "masculine", "doma"]
-    )
+    record = RussianNounRecord.from_csv_fields(["dom", "house", "masculine", "doma"])
     assert record.nominative == "dom"
     assert record.accusative == "dom"

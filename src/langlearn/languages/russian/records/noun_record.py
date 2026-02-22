@@ -147,7 +147,7 @@ class RussianNounRecord(BaseRecord):
 
     def get_plural_forms(self) -> dict[str, str]:
         """Get plural forms for display purposes."""
-        forms = {}
+        forms: dict[str, str] = {}
         if self.plural_nominative:
             forms["Plural Nominative"] = self.plural_nominative
         if self.plural_genitive:
