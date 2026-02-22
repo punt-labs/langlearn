@@ -41,10 +41,10 @@ build-backend = "uv_build"
 module-name = "langlearn"
 
 [tool.uv.sources]
-punt-langlearn-types = { path = "../langlearn-types" }
-punt-langlearn-anki = { path = "../langlearn-anki" }
-punt-langlearn-imagegen = { path = "../langlearn-imagegen" }
-punt-langlearn-tts = { path = "../langlearn-tts" }
+punt-langlearn-types = { git = "https://github.com/punt-labs/langlearn-types", rev = "7ca74011c014de62236373cf4d364ad2758e5f06" }
+punt-langlearn-anki = { git = "https://github.com/punt-labs/langlearn-anki", rev = "55da0bd5cc87f3b62a19e2326b1fecf7b0f0375d" }
+punt-langlearn-imagegen = { git = "https://github.com/punt-labs/langlearn-imagegen", rev = "0043246c6f570935e1eaa8f3f62fe68de619e837" }
+punt-langlearn-tts = { git = "https://github.com/punt-labs/langlearn-tts", rev = "db743b580e9f733bd090f4a590a7802a35a4530e" }
 
 [tool.ruff]
 line-length = 88
