@@ -14,12 +14,15 @@ class LanguageRegistry:
 
     @classmethod
     def register(cls, language_code: str, language_class: type[Language]) -> None:
-        """Register a language implementation."""
+        """Register a language implementation.
+
+        The language_class must have a no-argument constructor.
+        """
         cls._languages[language_code] = language_class
 
     @classmethod
     def get(cls, language_code: str) -> Language:
-        """Get a language implementation by code."""
+        """Get a language implementation by code (instantiated via no-arg constructor)."""
         if language_code not in cls._languages:
             raise ValueError(f"Language {language_code} not registered")
         return cls._languages[language_code]()

@@ -74,7 +74,7 @@ class Language(Protocol):
         ...
 
     def get_template_directory(self) -> Path:
-        """Get the prompts directory for this language."""
+        """Get the template directory for this language."""
         ...
 
     def create_domain_model(self, record_type: str, record: BaseRecord) -> Any:

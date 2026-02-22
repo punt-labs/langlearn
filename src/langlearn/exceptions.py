@@ -173,7 +173,7 @@ class RecordValidationError(DataProcessingError):
     """Record validation failed.
 
     Raised when:
-        - Pydantic validation fails
+        - Record validation fails
         - Required fields are missing
         - Field values don't meet constraints
     """

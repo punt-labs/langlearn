@@ -14,10 +14,10 @@ class TTSConfig:
     """
 
     voice_id: str
-    """AWS Polly voice ID (e.g., 'Marlene', 'Tatyana', 'Seoyeon')"""
+    """Voice identifier for the TTS provider (e.g., 'Marlene', 'Tatyana', 'Seoyeon')."""
 
     language_code: str
-    """ISO language code (e.g., 'de-DE', 'ru-RU', 'ko-KR')"""
+    """ISO language code (e.g., 'de-DE', 'ru-RU', 'ko-KR')."""
 
     engine: str = "standard"
-    """Polly engine type - 'standard' or 'neural' (default: 'standard')"""
+    """Engine or model identifier for the TTS provider (default: 'standard')."""
