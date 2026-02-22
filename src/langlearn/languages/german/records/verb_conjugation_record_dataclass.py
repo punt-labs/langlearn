@@ -148,11 +148,10 @@ class VerbConjugationRecord(BaseRecord):
                 f"VerbConjugationRecord requires at least 12 fields, got {len(fields)}"
             )
 
-        # Helper function to safely strip string or return empty string
         def safe_strip(field: str | None) -> str:
             if field is None:
                 return ""
-            return field.strip() if isinstance(field, str) else ""
+            return field.strip()
 
         return cls(
             infinitive=safe_strip(fields[0]),

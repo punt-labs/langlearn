@@ -186,7 +186,3 @@ def create_record(model_type: str, fields: list[str]) -> BaseRecord:
     Use GermanRecordFactory.create() for new code.
     """
     return GermanRecordFactory.create(model_type, fields)
-
-
-# Legacy registry access for backward compatibility
-RECORD_TYPE_REGISTRY = GermanRecordFactory._registry
