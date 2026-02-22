@@ -1,12 +1,11 @@
-"""Custom exceptions for the Anki German Language Deck Generator.
+"""Custom exceptions for langlearn.
 
-This module defines the exception hierarchy for the project, following
-the standards defined in docs/ENG-EXCEPTIONS.md.
+This module defines the exception hierarchy for the project.
 
 Exception Categories:
     - Configuration: Missing or invalid configuration
     - Service: External service failures
-    - Domain: German language rule violations
+    - Domain: Language-specific rule violations
     - Data Processing: CSV and record processing errors
     - Card Generation: Template and field mapping errors
 
@@ -102,7 +101,7 @@ class MediaGenerationError(ServiceError):
 class DomainError(LangLearnError):
     """Base class for domain logic errors.
 
-    German language-specific validation and processing
+    Language-specific validation and processing
     errors should use this hierarchy.
     """
 
@@ -110,12 +109,12 @@ class DomainError(LangLearnError):
 
 
 class GrammarValidationError(DomainError):
-    """German grammar validation failed.
+    """Grammar validation failed.
 
     Raised when:
-        - Article doesn't match noun gender
-        - Case declension is incorrect
-        - Plural form doesn't follow patterns
+        - Determiners or articles don't agree with noun features
+        - Verb or noun inflection does not match required form
+        - Word structure violates language-specific grammar rules
     """
 
     pass
@@ -125,7 +124,7 @@ class ArticlePatternError(DomainError):
     """Article pattern validation failed.
 
     Raised when:
-        - Article pattern doesn't match German rules
+        - Article pattern doesn't match language rules
         - Gender detection fails
         - Case requirements are violated
     """
