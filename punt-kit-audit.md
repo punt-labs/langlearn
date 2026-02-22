@@ -36,6 +36,7 @@ on tag push. Use the punt-kit template (same as biff/quarry/langlearn-tts).
 **2. No install.sh (all 4)**
 Per distribution.md, every user-facing project needs a POSIX sh install script as
 the primary install path. Each should follow the established pattern:
+
 - Check Python 3.13+
 - Check/install uv
 - `uv tool install --force <package>@git+https://github.com/punt-labs/<repo>.git`
@@ -58,6 +59,7 @@ langlearn-anki pins `astral-sh/setup-uv` to `d4b2f3b6ecc6e67c4457f6d3e41ec42d3d0
 langlearn has path dependencies on langlearn-types, langlearn-anki, langlearn-imagegen,
 and langlearn-tts in `[tool.uv.sources]`. Its CI workflows do NOT clone these sibling
 repos before `uv sync`. langlearn-anki correctly clones langlearn-types. Either:
+
 - langlearn CI is broken and nobody has noticed (because tests are smoke-only), or
 - uv resolves path deps from PyPI fallback when the path doesn't exist
 
@@ -66,6 +68,7 @@ install time and only affect local development. If CI would fail, it's latent br
 
 **5. .biff missing (all 4)**
 Per org rollout, all active projects should have a `.biff` config file:
+
 ```toml
 [team]
 members = ["jmf-pobox"]
@@ -96,23 +99,27 @@ All 4 use `[project.optional-dependencies] dev = [...]`. The punt-kit standard
 ## Per-Project Beads to Create
 
 ### langlearn
+
 - Add release.yml workflow
 - Add install.sh (POSIX sh, git URL)
 - Add .biff config
 - Investigate CI path dependency resolution
 
 ### langlearn-anki
+
 - Add release.yml workflow
 - Add install.sh (POSIX sh, git URL)
 - Add .biff config
 - Pin setup-uv to v7.3.0 (match other projects)
 
 ### langlearn-imagegen
+
 - Add release.yml workflow
 - Add install.sh (POSIX sh, git URL)
 - Add .biff config
 
 ### langlearn-types
+
 - Add release.yml workflow
 - Add .biff config
 - Evaluate CLI/MCP surface — keep or remove?
