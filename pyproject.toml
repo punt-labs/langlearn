@@ -3,7 +3,7 @@ name = "punt-langlearn"
 version = "0.1.0"
 description = "Orchestrator for LangLearn workflows (evaluation gates + backends)."
 readme = "README.md"
-authors = [{ name = "JF", email = "jmf@pobox.com" }]
+authors = [{ name = "Punt Labs" }]
 requires-python = ">=3.13"
 license = "MIT"
 dependencies = [
