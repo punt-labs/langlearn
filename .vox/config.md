@@ -1,7 +1,9 @@
 ---
+vibe_tags: "[neutral]"
+vibe_signals: ""
 notify: "y"
-speak: "n"
-voice: "matilda"
-vibe_signals: "merge-conflict@13:10"
-vibe_tags: ""
+speak: "y"
+voice: "charlie"
+vibe: "neutral"
+vibe_mode: "manual"
 ---
