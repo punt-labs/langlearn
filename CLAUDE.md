@@ -64,7 +64,7 @@ This project uses **beads** (`bd`) for issue tracking. If an issue discovered he
 
 Identity: `agent: claude` per `.punt-labs/ethos.yaml`. Sub-agent calls (`Agent(subagent_type=…)`) match ethos identity handles.
 
-langlearn is the orchestrator: it composes the typed protocols from `langlearn-types` with the provider-side implementations (`langlearn-tts`, `langlearn-imagegen`, `langlearn-anki`). Most code is Python; the surface is CLI + MCP. Worker and evaluator must be distinct handles with no shared role. Claude is the leader, never the evaluator.
+langlearn is the orchestrator: it composes the typed protocols from `langlearn-types` with the provider-side implementations (`langlearn-tts`, `langlearn-imagegen`, `langlearn-anki`). Most code is Python; the surface is CLI + MCP. Within each row, the worker and evaluator must be distinct handles. Claude is the leader, never the evaluator.
 
 | Task type | Worker | Evaluator |
 |-----------|--------|-----------|
