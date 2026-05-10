@@ -60,6 +60,27 @@ Do **not** merge immediately after creating a PR. Expect **2–6 review cycles**
 
 This project uses **beads** (`bd`) for issue tracking. If an issue discovered here affects multiple repos or requires a standards change, escalate to a [punt-kit bead](https://github.com/punt-labs/punt-kit) instead (see [bead placement scheme](../CLAUDE.md#where-to-create-a-bead)).
 
+## Ethos & Delegation
+
+Identity: `agent: claude` per `.punt-labs/ethos.yaml`. Sub-agent calls (`Agent(subagent_type=…)`) match ethos identity handles.
+
+langlearn is the orchestrator: it composes the typed protocols from `langlearn-types` with the provider-side implementations (`langlearn-tts`, `langlearn-imagegen`, `langlearn-anki`). Most code is Python; the surface is CLI + MCP. Worker and evaluator must be distinct handles with no shared role. Claude is the leader, never the evaluator.
+
+| Task type | Worker | Evaluator |
+|-----------|--------|-----------|
+| Python orchestration logic | `rmh` (Hettinger) | `gvr` (van Rossum) — language-design view |
+| Protocol / contract evolution | `gvr` | `rmh` |
+| CLI surface | `mdm` (McIlroy) | `rop` (Pike) |
+| MCP server tool definitions | `rmh` | `mdm` |
+| Cross-repo integration with langlearn-types | `rmh` | `gvr` — protocol stability |
+| Provider selection / routing | `rmh` | `mdm` |
+| Security — API keys, env-var resolution | `rmh` | `djb` (Bernstein) |
+| Infra / CI / release | `adb` (Lovelace) | `kth` (Hightower) |
+| Pedagogy / learner outcomes | `claude` (leader) | `mcg` (Cagan) — outcome-driven product |
+| User research with language learners | `claude` (leader) | `tdt` (Torres) — continuous discovery |
+
+Use the `standard` pipeline for features, `coverage` for test gaps, `coe` for recurring failures across providers.
+
 ## Standards References
 
 - [Python](https://github.com/punt-labs/punt-kit/blob/main/standards/python.md)
