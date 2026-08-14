@@ -32,7 +32,7 @@ langlearn-server = "langlearn.server:run_server"
 dev = [
     "mypy>=2.3.0",
     "pyright>=1.1.411",
-    "ruff>=0.9.0",
+    "ruff>=0.16.2",
     "pytest>=9.1.1",
 ]
 
