@@ -10,13 +10,13 @@ classifiers = [
     "Development Status :: 2 - Pre-Alpha",
 ]
 dependencies = [
-    "mcp>=1.28.1,<2",
     "typer>=0.27.1",
-    "rich>=13.7.0",
+    "rich>=15.0.0",
     "punt-langlearn-types>=0.1.0",
     "punt-langlearn-anki>=0.1.0",
     "punt-langlearn-imagegen>=0.1.0",
     "punt-langlearn-tts>=0.1.0",
+    "fastmcp>=2,<3",
 ]
 
 [project.urls]
@@ -129,5 +129,5 @@ show_missing = true
 precision = 2
 
 [[tool.mypy.overrides]]
-module = ["typer.*", "mcp.*"]
+module = ["fastmcp.*"]
 ignore_missing_imports = true
