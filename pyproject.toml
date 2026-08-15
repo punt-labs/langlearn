@@ -129,5 +129,5 @@ show_missing = true
 precision = 2
 
 [[tool.mypy.overrides]]
-module = ["typer.*", "mcp.*"]
+module = ["fastmcp.*"]
 ignore_missing_imports = true
