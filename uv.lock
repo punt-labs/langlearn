@@ -1,5 +1,5 @@
 version = 1
-revision = 3
+revision = 2
 requires-python = ">=3.13"
 resolution-markers = [
     "python_full_version >= '3.15'",
@@ -1267,7 +1267,7 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "fastmcp", specifier = ">=2,<4" },
+    { name = "fastmcp", specifier = ">=3,<4" },
     { name = "mypy", marker = "extra == 'dev'", specifier = ">=2.3.0" },
     { name = "punt-langlearn-anki", git = "https://github.com/punt-labs/langlearn-anki?rev=55da0bd5cc87f3b62a19e2326b1fecf7b0f0375d" },
     { name = "punt-langlearn-imagegen", git = "https://github.com/punt-labs/langlearn-imagegen?rev=0043246c6f570935e1eaa8f3f62fe68de619e837" },

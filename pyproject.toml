@@ -16,7 +16,7 @@ dependencies = [
     "punt-langlearn-anki>=0.1.0",
     "punt-langlearn-imagegen>=0.1.0",
     "punt-langlearn-tts>=0.1.0",
-    "fastmcp>=2,<4",
+    "fastmcp>=3,<4",
 ]
 
 [project.urls]
