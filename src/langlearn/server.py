@@ -4,8 +4,7 @@ from fastmcp import FastMCP
 
 from langlearn import __version__
 
-mcp = FastMCP("langlearn")
-mcp._mcp_server.version = __version__  # pyright: ignore[reportPrivateUsage]
+mcp = FastMCP("langlearn", version=__version__)
 
 
 @mcp.tool()
