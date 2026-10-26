@@ -2,6 +2,11 @@
 
 ## [Unreleased]
 
+### Security
+
+- Clear 1 open Dependabot alert (critical, GHSA-6q48-6c7w-9gw2) by bumping
+  certifi 2026.1.4 → 2026.10.23 in `uv.lock`.
+
 ### Changed
 
 - Pass the server version to `FastMCP(name, version=...)` instead of mutating
