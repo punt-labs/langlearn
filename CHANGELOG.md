@@ -4,6 +4,8 @@
 
 ### Security
 
+- Clear new Dependabot alerts (high) by bumping joserfc 1.7.4 → 1.7.7 and
+  dnspython 2.8.0 → 2.9.1 in `uv.lock`.
 - Clear 13 open Dependabot alerts (1 critical, 2 high, 9 medium, 1 low) by
   bumping authlib 1.7.2 → 1.9.2, fastmcp 4.0.3 → 4.1.5, fastmcp-slim
   4.0.3 → 4.1.5, and opentelemetry-api 1.44.0 → 1.45.2 in `uv.lock`.
