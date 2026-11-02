@@ -4,6 +4,9 @@
 
 ### Security
 
+- Clear 13 open Dependabot alerts (1 critical, 2 high, 9 medium, 1 low) by
+  bumping authlib 1.7.2 → 1.9.2, fastmcp 4.0.3 → 4.1.5, fastmcp-slim
+  4.0.3 → 4.1.5, and opentelemetry-api 1.44.0 → 1.45.2 in `uv.lock`.
 - Clear 1 open Dependabot alert (critical, GHSA-6q48-6c7w-9gw2) by bumping
   certifi 2026.1.4 → 2026.10.23 in `uv.lock`.
 
