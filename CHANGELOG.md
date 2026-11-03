@@ -14,6 +14,8 @@
 
 ### Changed
 
+- Dropped the retired `punt-labs/team` registry submodule at
+  `.punt-labs/ethos`; ethos resolves identities from the global store.
 - Pass the server version to `FastMCP(name, version=...)` instead of mutating
   the private `_mcp_server.version` attribute, which fastmcp 4.x no longer
   guarantees. Behavior is unchanged; the public constructor kwarg replaces the
